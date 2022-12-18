@@ -45,15 +45,7 @@
 					</nav>
 				</header>
 
-				<iframe
-        width="960"
-        height="720"
-        src="https://us-west-2.quicksight.aws.amazon.com/sn/embed/share/accounts/755956835466/dashboards/4b717ec3-1d97-4fec-88d7-0810f26890da?directory_alias=feather-quicksight">
-    </iframe>
-
-		
-		<iframe width="600" height="400" src="https://us-west-2.quicksight.aws.amazon.com/sn/embed/share/accounts/755956835466/dashboards/4b717ec3-1d97-4fec-88d7-0810f26890da/sheets/4b717ec3-1d97-4fec-88d7-0810f26890da_04f2344b-fdfc-46dd-a19a-cf1507d35ebd/visuals/4b717ec3-1d97-4fec-88d7-0810f26890da_acb796de-fc42-4530-bd89-e6714ec4dea0?directory_alias=feather-quicksight"></iframe>
-			<!-- Banner -->
+				<!-- Banner -->
 				<section id="banner">
 
 					<!--
@@ -73,42 +65,7 @@
 						<br />
 						by <a href="http://html5up.net">HTML5 UP</a>.</p>
 						<footer>
-							<ul class="buttons stacked">
-								<input type="file" id="fileupload" name="myfile" />
-								<p class="button fit scrolly" id="demo">Create Table</p>
-
-								<script>
-									document.getElementById("demo").onclick = function() {addFile()};
-
-									function addFile() {
-										var files = document.getElementById("fileupload").files
-										var file = files[0];
-										var fileName = file.name;
-
-										var bucketKey = fileName;
-
-										// Use S3 ManagedUpload class as it supports multipart uploads
-										var upload = new AWS.S3.ManagedUpload({
-											params: {
-												Bucket: bucketName,
-												Key: bucketKey,
-												Body: file
-											}
-										});
-
-										var promise = upload.promise();
-
-										promise.then(
-											function(data) {
-												alert("Successfully uploaded file.");
-											},
-											function(err) {
-												return alert("There was an error uploading your file: ", err.message);
-											}
-										);
-									};
-								</script>
-							</ul>
+							
 						</footer>
 
 					</div>
