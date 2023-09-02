@@ -1,19 +1,25 @@
-import React from 'react';
-import './App.css'; // Assuming you have a corresponding CSS file
-import Header from './components/Header';
-import Banner from './components/Banner';
-import MainContent from './components/Main';
-import CTA from './components/CTA';
+import { BrowserRouter } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
+// routes
+import Router from './routes';
+// theme
+import ThemeProvider from './theme';
+// components
+import { StyledChart } from './components/chart';
+import ScrollToTop from './components/scroll-to-top';
 
-function App() {
+// ----------------------------------------------------------------------
+
+export default function App() {
   return (
-    <div className="App">
-      <Header />
-      <Banner />
-      <MainContent />
-      <CTA />
-    </div>
+    <HelmetProvider>
+      <BrowserRouter>
+        <ThemeProvider>
+          <ScrollToTop />
+          <StyledChart />
+          <Router />
+        </ThemeProvider>
+      </BrowserRouter>
+    </HelmetProvider>
   );
 }
-
-export default App;
