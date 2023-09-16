@@ -126,6 +126,12 @@ export default function UserPage() {
     setSelected(newSelected);
   };
 
+
+  const handleNewUser = () => {
+    console.log('New User');
+    alert('New User');
+  };
+
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
@@ -157,7 +163,7 @@ export default function UserPage() {
           <Typography variant="h4" gutterBottom>
             User
           </Typography>
-          <Button variant="contained" startIcon={<Iconify icon="eva:plus-fill" />}>
+          <Button variant="contained" startIcon={<Iconify icon="eva:plus-fill" />} onClick={handleNewUser}>
             New User
           </Button>
         </Stack>
