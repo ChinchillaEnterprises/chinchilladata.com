@@ -19,5 +19,26 @@
         }
       }
     }
+  },
+  "develop": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-chinchilladatacom-develop-105353-authRole",
+      "UnauthRoleArn": "arn:aws:iam::755956835466:role/amplify-chinchilladatacom-develop-105353-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::755956835466:role/amplify-chinchilladatacom-develop-105353-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-chinchilladatacom-develop-105353-deployment",
+      "UnauthRoleName": "amplify-chinchilladatacom-develop-105353-unauthRole",
+      "StackName": "amplify-chinchilladatacom-develop-105353",
+      "StackId": "arn:aws:cloudformation:us-east-2:755956835466:stack/amplify-chinchilladatacom-develop-105353/bc535e50-5704-11ee-9694-0a58bd4f805f",
+      "AmplifyAppId": "d3cjtzajejnyut"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d3cjtzajejnyut",
+          "type": "cicd"
+        }
+      }
+    }
   }
 }
