@@ -6,6 +6,8 @@ import SimpleLayout from './layouts/simple';
 import BlogPage from './pages/BlogPage';
 import UserPage from './pages/UserPage';
 import LoginPage from './pages/LoginPage';
+
+import LandingPage from './pages/LandingPage';
 import Page404 from './pages/Page404';
 import ProductsPage from './pages/ProductsPage';
 import DashboardAppPage from './pages/DashboardAppPage';
@@ -29,6 +31,10 @@ export default function Router() {
       path: 'login',
       element: <LoginPage />,
     },
+    {
+      path: 'landing',
+      element: <LandingPage />,
+    },    
     {
       element: <SimpleLayout />,
       children: [

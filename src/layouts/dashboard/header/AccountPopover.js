@@ -54,7 +54,8 @@ export default function AccountPopover() {
           }),
         }}
       >
-        <Avatar src={account.photoURL} alt="photoURL" />
+        {/* <Avatar src={account.photoURL} alt="photoURL" /> */}
+        <IconButton>Abelino.Chinchilla@Gmail.com</IconButton>
       </IconButton>
 
       <Popover

@@ -68,12 +68,12 @@ export default function BlogPostCard({ post, index }) {
   ];
 
   return (
-    <Grid item xs={12} sm={latestPostLarge ? 12 : 6} md={latestPostLarge ? 6 : 3}>
+    <Grid item xs={12} sm={latestPostLarge ? 12 : 12} md={latestPostLarge ? 6 : 6}>
       <Card sx={{ position: 'relative' }}>
         <StyledCardMedia
           sx={{
-            ...((latestPostLarge || latestPost) && {
-              pt: 'calc(100% * 4 / 3)',
+            // ...((latestPostLarge || latestPost) && {
+              // pt: 'calc(100% * 4 / 3)',
               '&:after': {
                 top: 0,
                 content: "''",
@@ -82,16 +82,16 @@ export default function BlogPostCard({ post, index }) {
                 position: 'absolute',
                 bgcolor: (theme) => alpha(theme.palette.grey[900], 0.72),
               },
-            }),
-            ...(latestPostLarge && {
+            // }),
+            // ...(latestPostLarge && {
               pt: {
-                xs: 'calc(100% * 4 / 3)',
-                sm: 'calc(100% * 3 / 4.66)',
+                xs: 'calc(100% * 4 / 5)',
+                sm: 'calc(100% * 3 / 6.66)',
               },
-            }),
+            // }),
           }}
         >
-          <SvgColor
+          {/* <SvgColor
             color="paper"
             src="/assets/icons/shape-avatar.svg"
             sx={{
@@ -103,8 +103,8 @@ export default function BlogPostCard({ post, index }) {
               color: 'background.paper',
               ...((latestPostLarge || latestPost) && { display: 'none' }),
             }}
-          />
-          <StyledAvatar
+          /> */}
+          {/* <StyledAvatar
             alt={author.name}
             src={author.avatarUrl}
             sx={{
@@ -116,7 +116,7 @@ export default function BlogPostCard({ post, index }) {
                 height: 40,
               }),
             }}
-          />
+          /> */}
 
           <StyledCover alt={title} src={cover} />
         </StyledCardMedia>
@@ -131,20 +131,21 @@ export default function BlogPostCard({ post, index }) {
             }),
           }}
         >
-          <Typography gutterBottom variant="caption" sx={{ color: 'text.disabled', display: 'block' }}>
+          {/* <Typography gutterBottom variant="caption" sx={{ color: 'text.disabled', display: 'block' }}>
             {fDate(createdAt)}
-          </Typography>
+          </Typography> */}
 
           <StyledTitle
             color="inherit"
             variant="subtitle2"
             underline="hover"
-            sx={{
-              ...(latestPostLarge && { typography: 'h5', height: 60 }),
-              ...((latestPostLarge || latestPost) && {
-                color: 'common.white',
-              }),
-            }}
+            // sx={{
+            //   ...(latestPostLarge && { typography: 'h5', height: 60 }),
+            //   ...((latestPostLarge || latestPost) && {
+            //     color: 'common.white',
+            //   }),
+            // }}
+            sx = {{ textAlign: 'center', typography: 'h5', height: 60, color: 'common.white' }}
           >
             {title}
           </StyledTitle>

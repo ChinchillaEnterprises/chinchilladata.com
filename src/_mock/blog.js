@@ -29,19 +29,55 @@ const POST_TITLES = [
   'How to Animate a SVG with border-image',
 ];
 
-const posts = [...Array(23)].map((_, index) => ({
+// const posts = [...Array(23)].map((_, index) => ({
+//   id: faker.datatype.uuid(),
+//   cover: `/assets/images/covers/cover_${index + 1}.jpg`,
+//   title: POST_TITLES[index + 1],
+//   createdAt: faker.date.past(),
+//   view: faker.datatype.number(),
+//   comment: faker.datatype.number(),
+//   share: faker.datatype.number(),
+//   favorite: faker.datatype.number(),
+//   author: {
+//     name: faker.name.fullName(),
+//     avatarUrl: `/assets/images/avatars/avatar_${index + 1}.jpg`,
+//   },
+// }));
+
+const Postone = {
   id: faker.datatype.uuid(),
-  cover: `/assets/images/covers/cover_${index + 1}.jpg`,
-  title: POST_TITLES[index + 1],
-  createdAt: faker.date.past(),
-  view: faker.datatype.number(),
-  comment: faker.datatype.number(),
-  share: faker.datatype.number(),
-  favorite: faker.datatype.number(),
-  author: {
-    name: faker.name.fullName(),
-    avatarUrl: `/assets/images/avatars/avatar_${index + 1}.jpg`,
-  },
-}));
+  cover: `/assets/images/covers/cover_1.jpg`,
+  title: "Custom Data Training",
+  // createdAt: faker.date.past(),
+  // view: faker.datatype.number(),
+  // view: 100,
+  // comment: faker.datatype.number(),
+  // share: faker.datatype.number(),
+  // favorite: faker.datatype.number(),
+  // author: {
+  //   name: faker.name.fullName(),
+  //   avatarUrl: `/assets/images/avatars/avatar_1.jpg`,
+  // },
+};
+
+const Posttwo = {
+  id: faker.datatype.uuid(),
+  cover: `/assets/images/covers/cover_2.jpg`,
+  title: "AI Chatbot",
+  // createdAt: faker.date.past(),
+  // view: faker.datatype.number(),
+  // view: 100,
+  // comment: faker.datatype.number(),
+  // share: faker.datatype.number(),
+  // favorite: faker.datatype.number(),
+  // author: {
+  //   name: faker.name.fullName(),
+  //   avatarUrl: `/assets/images/avatars/avatar_2.jpg`,
+  // },
+};
+
+// const posts = [Postone, Posttwo];
+const posts = [Postone];
+
 
 export default posts;
