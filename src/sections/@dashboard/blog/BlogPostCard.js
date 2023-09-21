@@ -57,15 +57,15 @@ BlogPostCard.propTypes = {
 };
 
 export default function BlogPostCard({ post, index }) {
-  const { cover, title, view, comment, share, author, createdAt } = post;
+  const { cover, title, active, comment, share, author, createdAt, path } = post;
   const latestPostLarge = index === 0;
   const latestPost = index === 1 || index === 2;
 
-  const POST_INFO = [
-    { number: comment, icon: 'eva:message-circle-fill' },
-    { number: view, icon: 'eva:eye-fill' },
-    { number: share, icon: 'eva:share-fill' },
-  ];
+  // const POST_INFO = [
+  //   { number: comment, icon: 'eva:message-circle-fill' },
+  //   { number: view, icon: 'eva:eye-fill' },
+  //   { number: share, icon: 'eva:share-fill' },
+  // ];
 
   return (
     <Grid item xs={12} sm={latestPostLarge ? 12 : 12} md={latestPostLarge ? 6 : 6}>
@@ -80,7 +80,9 @@ export default function BlogPostCard({ post, index }) {
                 width: '100%',
                 height: '100%',
                 position: 'absolute',
-                bgcolor: (theme) => alpha(theme.palette.grey[900], 0.72),
+                bgcolor : active ? '' : (theme) => alpha(theme.palette.grey[600], 0.90)
+                
+                // bgcolor: (theme) => alpha(theme.palette.grey[900], 0.72),
               },
             // }),
             // ...(latestPostLarge && {
@@ -145,11 +147,13 @@ export default function BlogPostCard({ post, index }) {
             //     color: 'common.white',
             //   }),
             // }}
-            sx = {{ textAlign: 'center', typography: 'h5', height: 60, color: 'common.white' }}
+            sx = {{ textAlign: 'center', typography: 'h4', height: 60, color: 'common.white' }}
           >
+            <Link href={path} color="inherit" underline="hover">
             {title}
+            </Link>
           </StyledTitle>
-
+{/* 
           <StyledInfo>
             {POST_INFO.map((info, index) => (
               <Box
@@ -167,7 +171,7 @@ export default function BlogPostCard({ post, index }) {
                 <Typography variant="caption">{fShortenNumber(info.number)}</Typography>
               </Box>
             ))}
-          </StyledInfo>
+          </StyledInfo> */}
         </CardContent>
       </Card>
     </Grid>

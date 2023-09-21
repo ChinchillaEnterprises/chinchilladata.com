@@ -46,8 +46,10 @@ const POST_TITLES = [
 
 const Postone = {
   id: faker.datatype.uuid(),
-  cover: `/assets/images/covers/cover_1.jpg`,
-  title: "Custom Data Training",
+  cover: `/assets/images/covers/QDM.png`,
+  title: "QDM",
+  path: "#QDM",
+  active: true,
   // createdAt: faker.date.past(),
   // view: faker.datatype.number(),
   // view: 100,
@@ -62,8 +64,10 @@ const Postone = {
 
 const Posttwo = {
   id: faker.datatype.uuid(),
-  cover: `/assets/images/covers/cover_2.jpg`,
-  title: "AI Chatbot",
+  cover: `/assets/images/covers/chatbot.png`,
+  title: "QPL",
+  path: "#QPL",
+  active: false,
   // createdAt: faker.date.past(),
   // view: faker.datatype.number(),
   // view: 100,
@@ -76,8 +80,8 @@ const Posttwo = {
   // },
 };
 
-// const posts = [Postone, Posttwo];
-const posts = [Postone];
+const posts = [Postone, Posttwo];
+// const posts = [Postone];
 
 
 export default posts;

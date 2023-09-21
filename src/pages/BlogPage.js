@@ -27,16 +27,16 @@ export default function BlogPage() {
       <Container>
         <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
           <Typography variant="h4" gutterBottom>
-            Blog
+            Services
           </Typography>
-          <Button variant="contained" startIcon={<Iconify icon="eva:plus-fill" />}>
+          {/* <Button variant="contained" startIcon={<Iconify icon="eva:plus-fill" />}>
             New Post
-          </Button>
+          </Button> */}
         </Stack>
 
         <Stack mb={5} direction="row" alignItems="center" justifyContent="space-between">
-          <BlogPostsSearch posts={POSTS} />
-          <BlogPostsSort options={SORT_OPTIONS} />
+          {/* <BlogPostsSearch posts={POSTS} /> */}
+          {/* <BlogPostsSort options={SORT_OPTIONS} /> */}
         </Stack>
 
         <Grid container spacing={3}>
