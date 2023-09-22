@@ -6,6 +6,7 @@ import SimpleLayout from './layouts/simple';
 import BlogPage from './pages/BlogPage';
 import UserPage from './pages/UserPage';
 import LoginPage from './pages/LoginPage';
+import QDMPage from './pages/QDMPage';
 
 import LandingPage from './pages/LandingPage';
 import Page404 from './pages/Page404';
@@ -25,6 +26,7 @@ export default function Router() {
         { path: 'user', element: <UserPage /> },
         { path: 'products', element: <ProductsPage /> },
         { path: 'blog', element: <BlogPage /> },
+        { path: 'qdm', element: <QDMPage /> },
       ],
     },
     {
@@ -35,6 +37,11 @@ export default function Router() {
       path: 'landing',
       element: <LandingPage />,
     },    
+
+    // {
+    //   path: 'qdm',
+    //   element: <QDMPage />,
+    // },        
     {
       element: <SimpleLayout />,
       children: [

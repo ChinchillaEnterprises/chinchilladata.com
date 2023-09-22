@@ -7,3 +7,6 @@ export { default as AppWebsiteVisits } from './AppWebsiteVisits';
 export { default as AppWidgetSummary } from './AppWidgetSummary';
 export { default as AppCurrentSubject } from './AppCurrentSubject';
 export { default as AppConversionRates } from './AppConversionRates';
+export { default as QDM } from './QDM';
+export { default as DataSets } from './DataSets';
+export { default as QDMoutput } from './QDMoutput';
