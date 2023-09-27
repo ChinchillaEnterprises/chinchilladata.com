@@ -1,8 +1,9 @@
+import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { faker } from '@faker-js/faker';
 // @mui
 import { useTheme } from '@mui/material/styles';
-import { Grid, Container, Typography } from '@mui/material';
+import { Grid, Container, Typography, IconButton } from '@mui/material';
 
 
 // components
@@ -28,6 +29,23 @@ import {
 export default function DashboardAppPage() {
   const theme = useTheme();
 
+  // const showDatasets
+  const [showDatasets, setShowDatasets] = React.useState(true);
+
+  // toggle showDatasets
+  const toggleShowDatasets = () => {
+    setShowDatasets(!showDatasets);
+  };
+
+
+  const dataSetsList = [...Array(2)].map((_, index) => ({
+    id: faker.datatype.uuid(),
+    title: faker.name.jobTitle(),
+    description: faker.name.jobTitle(),
+    image: `/assets/images/covers/cover_${index + 1}.jpg`,
+    postedAt: faker.date.recent(),
+  }));
+
   return (
     <>
       <Helmet>
@@ -35,35 +53,18 @@ export default function DashboardAppPage() {
       </Helmet>
 
       <Container maxWidth="xl">
-        {/* <Typography variant="h4" sx={{ mb: 5 }}>
-          Hi, Welcome back
-        </Typography> */}
 
         <Grid container spacing={3}>
-          {/* <Grid item xs={12} sm={6} md={3}>
-            <AppWidgetSummary title="Weekly Sales" total={714000} icon={'ant-design:android-filled'} />
-          </Grid> */}
 
-          {/* <Grid item xs={12} sm={6} md={3}>
-            <AppWidgetSummary title="New Users" total={1352831} color="info" icon={'ant-design:apple-filled'} />
-          </Grid>
+          <Grid item xs={4} md={4} lg={4} />
 
-          <Grid item xs={12} sm={6} md={3}>
-            <AppWidgetSummary title="Item Orders" total={1723315} color="warning" icon={'ant-design:windows-filled'} />
-          </Grid>
-
-          <Grid item xs={12} sm={6} md={3}>
-            <AppWidgetSummary title="Bug Reports" total={234} color="error" icon={'ant-design:bug-filled'} />
-          </Grid> */}
-
-
-          <Grid item xs={12} md={6} lg={4}>
+          <Grid item xs={3} md={3} lg={3}>
             <QDM
               title="QDM"
               list={[...Array(1)].map((_, index) => ({
                 id: faker.datatype.uuid(),
-                title: faker.name.jobTitle(),
-                description: faker.name.jobTitle(),
+                // title: faker.name.jobTitle(),
+                // description: faker.name.jobTitle(),
                 image: `/assets/images/covers/cover_${index + 1}.jpg`,
                 postedAt: faker.date.recent(),
               }))}
@@ -71,48 +72,46 @@ export default function DashboardAppPage() {
             />
           </Grid>
 
+          <Grid item xs={5} md={5} lg={4} />
 
+          <Grid item xs={5} md={5} lg={5} />
 
-          <Grid item xs={12} md={6} lg={8}>
-            <DataSets
-              title="Data Sets"
-              list={[...Array(1)].map((_, index) => ({
-                id: faker.datatype.uuid(),
-                title: faker.name.jobTitle(),
-                description: faker.name.jobTitle(),
-                image: `/assets/images/covers/cover_${index + 1}.jpg`,
-                postedAt: faker.date.recent(),
-              }))}
-            />
+          <Grid item xs={2} md={2} lg={2}>
+
+            <IconButton onClick={toggleShowDatasets}>
+              {showDatasets ? (
+                <Iconify icon="eva:eye-off-fill" /> // For Hide when datasets are showing
+              ) : (
+                <Iconify icon="eva:eye-fill" /> // For Show when datasets are hidden
+              )}
+            </IconButton>
+
           </Grid>
+
+          <Grid item xs={5} md={5} lg={5} />
+
+          {/* Fixed conditional rendering */}
+          {showDatasets && dataSetsList.length > 0 && (
+            <>
+              <Grid item xs={12} md={dataSetsList.length * 1} lg={dataSetsList.length * 1} />
+              <Grid item xs={12} md={dataSetsList.length * 4} lg={dataSetsList.length * 4}>
+                <DataSets
+                  title="Data Sets"
+                  list={dataSetsList}
+                />
+              </Grid>
+              <Grid item xs={12} md={dataSetsList.length * 2} lg={dataSetsList.length * 2} />
+            </>
+          )}
 
           <Grid item xs={12} md={12} lg={12}>
             <QDMoutput
               title="Tasks"
               list={[
                 { id: '1', label: 'Create FireStone Logo' },
-                // { id: '2', label: 'Add SCSS and JS files if required' },
-                // { id: '3', label: 'Stakeholder Meeting' },
-                // { id: '4', label: 'Scoping & Estimations' },
-                // { id: '5', label: 'Sprint Showcase' },
               ]}
             />
           </Grid>
-
-
-          <Grid item xs={12} md={6} lg={8}>
-            <AppTasks
-              title="Tasks"
-              list={[
-                { id: '1', label: 'Create FireStone Logo' },
-                // { id: '2', label: 'Add SCSS and JS files if required' },
-                // { id: '3', label: 'Stakeholder Meeting' },
-                // { id: '4', label: 'Scoping & Estimations' },
-                // { id: '5', label: 'Sprint Showcase' },
-              ]}
-            />
-          </Grid>
-
 
         </Grid>
       </Container>

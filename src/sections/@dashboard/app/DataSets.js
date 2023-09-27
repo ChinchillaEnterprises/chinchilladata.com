@@ -1,11 +1,12 @@
 // @mui
 import PropTypes from 'prop-types';
-import { Box, Stack, Link, Card, Grid, Divider, Typography, CardHeader } from '@mui/material';
+import { Box, Stack, Link, Card, Grid, Divider, Typography, CardHeader, IconButton } from '@mui/material';
 // utils
 import { fToNow } from '../../../utils/formatTime';
 // components
 import Iconify from '../../../components/iconify';
 import Scrollbar from '../../../components/scrollbar';
+
 
 // ----------------------------------------------------------------------
 
@@ -13,24 +14,31 @@ DataSets.propTypes = {
   title: PropTypes.string,
   subheader: PropTypes.string,
   list: PropTypes.array.isRequired,
+
 };
 
 export default function DataSets({ title, subheader, list, ...other }) {
   return (
     <Card {...other}>
-      <CardHeader title={title} subheader={subheader} />
 
-      <Scrollbar>
-  <Grid container spacing={2} sx={{ p: 3 }}>
-    {list.map((news) => (
-      <Grid item xs={6}>
-        {/* <DataSetItem news={news} /> */}
-        <DataSetItem key={news.id} news={news} />
+      <Grid container spacing={2}>
+
+          <CardHeader title={title} subheader={subheader} />
+
+
 
       </Grid>
-    ))}
-  </Grid>
-</Scrollbar>
+      <Scrollbar>
+        <Grid container spacing={2} sx={{ p: 3 }}>
+          {list.map((dataset) => (
+            <Grid item xs={6}>
+              {/* <DataSetItem news={news} /> */}
+              <DataSetItem key={dataset.id} news={dataset} />
+
+            </Grid>
+          ))}
+        </Grid>
+      </Scrollbar>
 
       {/* <Divider /> */}
 
