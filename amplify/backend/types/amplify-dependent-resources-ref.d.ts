@@ -1,1 +1,7 @@
-export type AmplifyDependentResourcesAttributes = {}
+export type AmplifyDependentResourcesAttributes = {
+  "function": {
+    "chinchilladatacomutillayer": {
+      "Arn": "string"
+    }
+  }
+}

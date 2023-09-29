@@ -17,6 +17,12 @@
           "appId": "dk7b9w09nskg9",
           "type": "cicd"
         }
+      },
+      "function": {
+        "chinchilladatacomutillayer": {
+          "deploymentBucketName": "amplify-chinchilladatacom-dev-193517-deployment",
+          "s3Key": "amplify-builds/chinchilladatacomutillayer-LambdaLayerVersion389b76e7-build.zip"
+        }
       }
     }
   }
