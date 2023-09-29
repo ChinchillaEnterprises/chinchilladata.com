@@ -1,13 +1,34 @@
 {
-  "function": {},
+  "function": {
+    "chinchilladatacom4927b707": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
   "hosting": {
     "amplifyhosting": {
-      "lastPushTimeStamp": "2023-09-29T16:36:27.996Z",
       "service": "amplifyhosting",
       "type": "cicd"
     }
   },
   "parameters": {
+    "AMPLIFY_function_chinchilladatacom4927b707_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "chinchilladatacom4927b707"
+        }
+      ]
+    },
+    "AMPLIFY_function_chinchilladatacom4927b707_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "chinchilladatacom4927b707"
+        }
+      ]
+    },
     "AMPLIFY_hosting_amplifyhosting_appId": {
       "usedBy": [
         {

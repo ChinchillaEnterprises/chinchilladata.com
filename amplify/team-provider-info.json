@@ -17,6 +17,12 @@
           "appId": "dgxiu1fexh7ok",
           "type": "cicd"
         }
+      },
+      "function": {
+        "chinchilladatacom4927b707": {
+          "deploymentBucketName": "amplify-chinchilladatacom-dev-113245-deployment",
+          "s3Key": "amplify-builds/chinchilladatacom4927b707-38776e6b6d4a7578337a-build.zip"
+        }
       }
     }
   }
