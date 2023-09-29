@@ -1,4 +1,11 @@
 {
+  "function": {
+    "chinchilladatacomutillayer": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "LambdaLayer"
+    }
+  },
   "hosting": {
     "amplifyhosting": {
       "service": "amplifyhosting",
@@ -6,6 +13,22 @@
     }
   },
   "parameters": {
+    "AMPLIFY_function_chinchilladatacomutillayer_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "chinchilladatacomutillayer"
+        }
+      ]
+    },
+    "AMPLIFY_function_chinchilladatacomutillayer_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "chinchilladatacomutillayer"
+        }
+      ]
+    },
     "AMPLIFY_hosting_amplifyhosting_appId": {
       "usedBy": [
         {
