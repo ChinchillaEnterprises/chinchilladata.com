@@ -82,7 +82,9 @@ export default function LoginPage() {
                     AI
                   </Typography>
 
-
+<Typography variant="h4" gutterBottom align='center' >
+Whats the ROI on your data? Start finding out today! 
+                  </Typography>
 
                   <Typography variant='p' align='center' paragraph>
                     Modern businesses possess an incredible volume of data, much of which remains untapped. Many organizations are hesitant to leverage AI due to confidentiality concerns and thus leaving information on the table.

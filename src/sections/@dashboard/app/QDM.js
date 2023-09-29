@@ -1,13 +1,10 @@
 import PropTypes from 'prop-types';
-import ReactApexChart from 'react-apexcharts';
 
 // @mui
 import { useTheme, styled } from '@mui/material/styles';
 import { Box, Stack, Link, Card, Grid, Divider, Typography, CardHeader } from '@mui/material';
 // utils
-import { fNumber } from '../../../utils/formatNumber';
-// components
-import { useChart } from '../../../components/chart';
+
 import Scrollbar from '../../../components/scrollbar';
 
 const StyledProductImg = styled('img')({
@@ -35,17 +32,15 @@ export default function QDM({ title, list, ...other }) {
     <Card {...other}>
       <CardHeader title={title} />
       <Scrollbar>
-  <Grid container spacing={2} sx={{ p: 3 }}>
-            {list.map((qdms) => (
-          <Stack spacing={2} sx={{ p: 3 }}>
-        <QDMbot key={qdms.id} attys={qdms} />
+        <Grid container spacing={2} sx={{ p: 3 }}>
+          {list.map((qdms) => (
+            <Stack spacing={2} sx={{ p: 3 }}>
+              <QDMbot key={qdms.id} attys={qdms} />
 
-          </Stack>
-        ))}
-</Grid>
-</Scrollbar>
-
-
+            </Stack>
+          ))}
+        </Grid>
+      </Scrollbar>
 
     </Card>
   );
@@ -57,31 +52,43 @@ QDMbot.propTypes = {
   attys: PropTypes.shape({
     description: PropTypes.string,
     image: PropTypes.string,
-    
+
     title: PropTypes.string,
   }),
 };
 
 function QDMbot({ attys }) {
   const { image, title, description, postedAt } = attys;
-
+  
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    console.log('Selected file:', file);
+    // send the filename over to the data sets component
+    // You can perform the file upload or other actions here
+  };
+  
   return (
     <Stack direction="row" alignItems="center" spacing={2}>
-      <Box component="img" alt={title} src={image} sx={{ width: 48, height: 48, borderRadius: 1.5, flexShrink: 0 }} />
-
-      <Box sx={{ minWidth: 240, flexGrow: 1 }}>
-        <Link color="inherit" variant="subtitle2" underline="hover" noWrap>
+      <Grid container spacing={2} sx={{ p: 3 }} lg={2} />
+      <Grid item xs={6} md={6} lg={10}>
+        <label htmlFor={`file-upload-${attys.id}`}>
+          <Box 
+            component="img" 
+            alt={title} 
+            src={image} 
+            sx={{ width: 48, height: 48, borderRadius: 1.5, flexShrink: 0, cursor: 'pointer' }} 
+          />
+          <input 
+            type="file" 
+            id={`file-upload-${attys.id}`} 
+            style={{ display: 'none' }} 
+            onChange={handleFileChange}
+          />
+        </label>
+        <Typography variant="p" align='center'>
           {title}
-        </Link>
-
-        <Typography variant="body2" sx={{ color: 'text.secondary' }} noWrap>
-          {description}
         </Typography>
-      </Box>
-
-      {/* <Typography variant="caption" sx={{ pr: 3, flexShrink: 0, color: 'text.secondary' }}>
-        {fToNow(postedAt)}
-      </Typography> */}
+      </Grid>
     </Stack>
   );
 }

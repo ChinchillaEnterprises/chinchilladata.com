@@ -10,18 +10,9 @@ import { Grid, Container, Typography, IconButton } from '@mui/material';
 import Iconify from '../components/iconify';
 // sections
 import {
-  AppTasks,
-  AppNewsUpdate,
-  AppOrderTimeline,
-  AppCurrentVisits,
   QDM,
   DataSets,
   QDMoutput,
-  AppWebsiteVisits,
-  AppTrafficBySite,
-  AppWidgetSummary,
-  AppCurrentSubject,
-  AppConversionRates,
 } from '../sections/@dashboard/app';
 
 // ----------------------------------------------------------------------
@@ -63,7 +54,7 @@ export default function DashboardAppPage() {
               title="QDM"
               list={[...Array(1)].map((_, index) => ({
                 id: faker.datatype.uuid(),
-                // title: faker.name.jobTitle(),
+                title: faker.name.jobTitle(),
                 // description: faker.name.jobTitle(),
                 image: `/assets/images/covers/cover_${index + 1}.jpg`,
                 postedAt: faker.date.recent(),
@@ -104,15 +95,17 @@ export default function DashboardAppPage() {
             </>
           )}
 
+          {!showDatasets && (
+            <Grid item xs={5} md={5} lg={5} />
+
+          )}
+
+          {/* <Grid item xs={1} md={1} lg={6} /> */}
           <Grid item xs={12} md={12} lg={12}>
             <QDMoutput
-              title="Tasks"
-              list={[
-                { id: '1', label: 'Create FireStone Logo' },
-              ]}
             />
           </Grid>
-
+          {/* <Grid item xs={2} md={2} lg={0} /> */}
         </Grid>
       </Container>
     </>
