@@ -1,0 +1,9 @@
+{
+  "function": {
+    "chinchilladatacomutilitylayer": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "LambdaLayer"
+    }
+  }
+}

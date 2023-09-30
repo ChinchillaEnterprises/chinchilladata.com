@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-chinchilladatacom-dev-11121-authRole",
+      "UnauthRoleArn": "arn:aws:iam::755956835466:role/amplify-chinchilladatacom-dev-11121-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::755956835466:role/amplify-chinchilladatacom-dev-11121-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-chinchilladatacom-dev-11121-deployment",
+      "UnauthRoleName": "amplify-chinchilladatacom-dev-11121-unauthRole",
+      "StackName": "amplify-chinchilladatacom-dev-11121",
+      "StackId": "arn:aws:cloudformation:us-east-2:755956835466:stack/amplify-chinchilladatacom-dev-11121/4517b520-5f2e-11ee-9b9a-0286e8f12ae7",
+      "AmplifyAppId": "d3k6hjg00cisec"
+    }
+  }
+}
