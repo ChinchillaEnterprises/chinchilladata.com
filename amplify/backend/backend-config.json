@@ -6,12 +6,7 @@
       "service": "LambdaLayer"
     }
   },
-  "hosting": {
-    "amplifyhosting": {
-      "service": "amplifyhosting",
-      "type": "cicd"
-    }
-  },
+  "hosting": {},
   "parameters": {
     "AMPLIFY_function_chinchilladatacomutillayer_deploymentBucketName": {
       "usedBy": [
@@ -26,22 +21,6 @@
         {
           "category": "function",
           "resourceName": "chinchilladatacomutillayer"
-        }
-      ]
-    },
-    "AMPLIFY_hosting_amplifyhosting_appId": {
-      "usedBy": [
-        {
-          "category": "hosting",
-          "resourceName": "amplifyhosting"
-        }
-      ]
-    },
-    "AMPLIFY_hosting_amplifyhosting_type": {
-      "usedBy": [
-        {
-          "category": "hosting",
-          "resourceName": "amplifyhosting"
         }
       ]
     }

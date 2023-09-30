@@ -12,16 +12,10 @@
       "AmplifyAppId": "d2a9gd1npzld0w"
     },
     "categories": {
-      "hosting": {
-        "amplifyhosting": {
-          "appId": "d2a9gd1npzld0w",
-          "type": "cicd"
-        }
-      },
       "function": {
         "chinchilladatacomutillayer": {
           "deploymentBucketName": "amplify-chinchilladatacom-dev-234233-deployment",
-          "s3Key": "amplify-builds/chinchilladatacomutillayer-LambdaLayerVersion35f32ad6-build.zip"
+          "s3Key": "amplify-builds/chinchilladatacomutillayer-LambdaLayerVersionb81eef59-build.zip"
         }
       }
     }
