@@ -8,6 +8,8 @@ verify_ssl = true
 [packages]
 boto3 = "*"
 pandas = "*"
+requests = "*"
+ndjson = "*"
 
 [requires]
 python_version = "3.10"
