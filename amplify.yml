@@ -4,6 +4,9 @@ backend:
     build:
       commands:
         - '# Execute Amplify CLI with the helper script'
+        - ln -fs /usr/local/bin/pip3.9 /usr/bin/pip3
+        - ln -fs /usr/local/bin/python3.9 /usr/bin/python3
+        - pip3 install --user pipenv        
         - amplifyPush --simple
 frontend:
   phases:
@@ -20,11 +23,3 @@ frontend:
   cache:
     paths:
       - node_modules/**/*
-backend:
-  phases:
-    build:
-      commands:
-        - ln -fs /usr/local/bin/pip3.9 /usr/bin/pip3
-        - ln -fs /usr/local/bin/python3.9 /usr/bin/python3
-        - pip3 install --user pipenv
-        - amplifyPush --simple
